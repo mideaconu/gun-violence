@@ -18,15 +18,15 @@ lookup_dict = {"Pkwy": "Parkway", "Blvd": " Boulevard", "Rd": "Road", "Dr ": "Dr
 def missing_values_table(df):
     total = df.isnull().sum().sort_values(ascending=False)
     percent = (round(df.isnull().sum() / df.isnull().count() * 100, 2)).sort_values(ascending=False)
-    missing_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
-    missing_data['Total'] = missing_data['Total'].map('{:,.0f}'.format)
+    missing_data = pd.concat([total, percent], axis=1, keys=['Missing', 'Percentage'])
+    missing_data['Missing'] = missing_data['Missing'].map('{:,.0f}'.format)
     return missing_data.T
 
 def unique_values_table(df):
     total = df.nunique().sort_values(ascending=False)
     percent = (round(df.nunique() / df.count() * 100, 2)).sort_values(ascending=False)
-    unique_data = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])
-    unique_data['Total'] = unique_data['Total'].map('{:,.0f}'.format)
+    unique_data = pd.concat([total, percent], axis=1, keys=['Unique', 'Percentage'])
+    unique_data['Unique'] = unique_data['Unique'].map('{:,.0f}'.format)
     return unique_data.T
 
 def split_into_dict(string):
