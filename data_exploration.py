@@ -114,10 +114,10 @@ def clean_address_string(address):
         return new_address
 
 def get_victims_by_year(row, df):
-    return max(row[df.columns.get_loc("n_killed")] + row[df.columns.get_loc("n_injured")] - row[df.columns.get_loc("n_suspects")], 0)
+    return row[df.columns.get_loc("n_killed")] + row[df.columns.get_loc("n_injured")]
 
 def victims_by_year(df, year):
     data = df.values
-    return [get_victims_by_year(data[i], df) for i in range(data.shape[0]) if data[i][0].year == 2013]
+    return [get_victims_by_year(data[i], df) for i in range(data.shape[0]) if data[i][df.columns.get_loc("date")].year == 2013]
 
     
