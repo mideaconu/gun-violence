@@ -1,1 +1,11 @@
-gun-violence-data_01-2013_03-2018.csv
+# Byte-compiled/optimized/DLL files
+__pycache__/
+
+# Datasets and images
+stage1_data/
+data/
+.csv
+.png
+
+# Jupyter Notebook
+.ipynb_checkpoints/
