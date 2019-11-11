@@ -4,8 +4,8 @@ __pycache__/
 # Datasets and images
 stage1_data/
 data/
-.csv
-.png
+*.csv
+*.png
 
 # Jupyter Notebook
 .ipynb_checkpoints/
